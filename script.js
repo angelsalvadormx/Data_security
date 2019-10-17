@@ -1,6 +1,6 @@
 var dictionary = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 //var dictionary = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j(10)', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't(20)', 'u', 'v', 'w', 'x', 'y', 'z'];
-var hashNCT = {
+var MyHash = {
   loop: 0,
   encode: function (str, hash) {
     str = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -61,8 +61,8 @@ var hashNCT = {
   }
 };
 
-var encode = hashNCT.encode('angel ntc', 2);
+var encode = MyHash.encode('testencode', 2);
 console.log('Encode ',encode);
-var decode = hashNCT.decode(encode);
-console.log('Decode', decode);
+var decode = MyHash.decode(encode);
+console.log('Decode ', decode);
 

@@ -1,7 +1,7 @@
 var dictionary = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 //var dictionary = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j(10)', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't(20)', 'u', 'v', 'w', 'x', 'y', 'z'];
 var MyHash = {
-  loop: 0,
+  cont_loop: 0,
   encode: function (str, hash) {
     str = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     hash = hash.toString().split('');
@@ -27,11 +27,11 @@ var MyHash = {
   },
   validSeed: function(seed){
     if(seed < 28){
-      tmp = this.loop;
-      this.loop = 0;
+      tmp = this.cont_loop;
+      this.cont_loop = 0;
       return {seed,Nloop: tmp};
     }else{
-      this.loop++;
+      this.cont_loop++;
       return this.validSeed(seed-27);
     }
   },
